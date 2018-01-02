@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+ -->
+  <head>
+    <meta charset="utf-8">
+    <title>Knot Caculator</title>
+    <link href="lib/nouislider.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+	
+	    <style>
+
+      canvas{width:100%, height:100%}
+
+
+        h2{
+          font-size: 1em;
+          display: block;
+          clear: both;
+        }
+
+        h3{
+          font-size: .8em;
+          display: block;
+          clear: both;
+        }
+
+        #renderArea{
+          padding-top:40px;
+          width:66%;
+          height: 100000px;
+          float: left;
+          background-color:#eeeeee;
+          overflow: scroll;
+          display: block;
+        }
+
+        #controls{
+          left:66%;
+          width:30%;
+          padding-top:40px;
+          display: block;
+          float: left;
+        }
+
+        #canvas{
+          display:none;
+          background-color:#eeeeee;
+        }
+
+
+
+        .layer,
+        .control_section{
+          padding:16px 8px;
+          display:block;
+          clear:both;
+        }
+
+        #instructions_block{
+          padding:16px 8px;
+          display:block;
+          clear:both;
+        }
+
+        #instructions_block input{
+          width: 100%;
+        }
+
+        .layer img{
+          width: 70px;
+          float: left;
+          border:thin solid #333;
+          margin: 8px;
+          display:block;
+        }
+
+        .layer_options{
+          display: block;
+          float: left;
+          width:66%;
+          
+        }
+
+        #controls input,
+        #controls select{
+          width: 90%;
+        }
+
+
+        .third_width{
+          width:32%;
+          float: left;
+        }
+        .half_width{
+          width:50%;
+          float: left;
+        }
+
+        .full_width{
+          width: 50%;
+        }
+
+
+        .my_label{
+          font-size: 0.7em;
+          display: block;
+          text-transform: uppercase;
+        }
+
+    </style>
+
+
+    </head>
+  <body>
+
+    <!-- Top bar -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <span class="brand" href="#"><a href="#">knot viewer</a></span>
+          <ul class="nav">
+	</ul>
+	<ul class="nav pull-right">
+		            <!--<li><a href="https://github.com/Devendork/BeingTheMachine" target="_blank">Code on GitHub</a></li>-->
+	       </ul>
+        </div>
+      </div>
+    </div>
+
+  
+
+
+  <div id="renderArea">
+
+  </div>
+
+  <div id = "controls">
+
+
+
+  <div id = "weave_settings" class="control_section">
+    <h2>Interface</h2>
+    <input type="button" id="update" value="update" onclick="updateKnots()" />
+    <div class="third_width">
+    <span class="my_label">Show Original</span>
+    <div id="original"></div>
+
+    </div>
+    <div class="third_width">
+    <span class="my_label">Show Nodes</span>
+    <div id="nodes"></div>
+
+    </div>
+    <div class="third_width">
+    <span class="my_label">Show Curve</span>
+    <div id="curve"></div>
+
+    </div>
+
+    <h2>Ratio Settings</h2>
+    <div id="ratios">
+    </div>
+
+    <h2>Knot Settings</h2>
+    <div id="knot_settings">
+     <span class="my_label">Show</span><div id = "show"></div> 
+     <span class="my_label">Segments</span><div id = "segments"></div> 
+     <span class="my_label">Iterations</span><div id = "iterations"></div> 
+     <span class="my_label">Points</span><div id = "points"></div> 
+    </div>
+
+
+
+  </div>
+
+
+
+  <canvas id="canvas">
+  </canvas>
+
+
+
+
+  </div>
+    <script src="lib/jquery-1.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.3/svg.min.js"></script>
+    <script src="lib/nouislider.min.js"></script>
+
+    <!-- Custom code -->
+    <script src="renderer.js"></script>
+    <script src="ui.js"></script>
+    <script src="knot.js"></script>
+    
+     </body>
+</html>
